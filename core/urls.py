@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.admin import blog_site
+from django.urls import include
+
+
 
 urlpatterns = [
-    path('blogadmin/', blog_site.urls),
+    
     path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),
 ]
 
 #admin.site.index_title ='TEL'
