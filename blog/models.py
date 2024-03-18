@@ -1,8 +1,9 @@
 from django.db import models
 
-class post(models.Model):
-
+class Post(models.Model):
     title = models.CharField(max_length=100)
-
-    def _str_(self):
-        return self.title 
+    content = models.TextField()
+    date_posted = models.DateTimeField(auto_now=True)
+    author = models.CharField(max_length=100)
+    def __str__(self):
+        return self.title
